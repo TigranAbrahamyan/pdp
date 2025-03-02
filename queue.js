@@ -19,3 +19,21 @@ class Queue {
     return this.list.getAt(0);
   }
 }
+
+class Queue2 {
+  constructor() {
+    this.list = [];
+  }
+
+  push(data) {
+    this.list.push(data);
+  }
+
+  shift() {
+    return this.list.shift();
+  }
+
+  peek() {
+    return this.list[0];
+  }
+}

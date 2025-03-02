@@ -20,3 +20,21 @@ class Stack {
     return this.list.getAt(this.list.size() - 1);
   }
 }
+
+class Stack2 {
+  constructor() {
+    this.list = [];
+  }
+
+  push(data) {
+    this.list.push(data);
+  }
+
+  pop() {
+    return this.list.pop();
+  }
+
+  peek() {
+    return this.list[this.list.length - 1];
+  }
+}
