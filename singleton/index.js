@@ -32,3 +32,5 @@ try {
 } catch (error) {
   console.error('Direct error:', error.message);
 }
+
+module.exports = Singleton;

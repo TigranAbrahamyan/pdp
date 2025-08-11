@@ -27,7 +27,7 @@ class HashTable {
     let index = this.#hash(key);
 
     while (this.table[index]) {
-      if (this.table[index][0] === key) {
+      if (this.table[index] !== 'DELETED' && this.table[index][0] === key) {
         return this.table[index][1];
       }
 
@@ -43,6 +43,21 @@ class HashTable {
     while (this.table[index]) {
       if (this.table[index][0] === key) {
         this.table[index] = null;
+        return true;
+      }
+
+      index++;
+    }
+
+    return false;
+  }
+
+  delete(key) {
+    let index = this.#hash(key);
+
+    while (this.table[index]) {
+      if (this.table[index] !== 'DELETED' && this.table[index][0] === key) {
+        this.table[index] = 'DELETED';
         return true;
       }
 
@@ -70,3 +85,5 @@ console.log('Delete city:', hash.delete('city'));
 console.log('City after deletion:', hash.get('city'));
 
 console.log('Delete unknown key:', hash.delete('nonexistent'));
+
+module.exports = HashTable;

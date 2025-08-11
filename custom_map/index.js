@@ -59,3 +59,5 @@ myMap.delete('a');
 console.log(myMap.getSize());
 myMap.clear();
 console.log(myMap.getSize());
+
+module.exports = CustomMap;

@@ -104,4 +104,27 @@ class LinkedList {
   }
 }
 
+const list = new LinkedList();
+
+list.append('apple');
+list.append('banana');
+list.append('cherry');
+
+console.log('Size after append:', list.size());
+
+list.prepend('avocado');
+console.log('Size after prepend:', list.size());
+
+const secondNode = list.getAt(1);
+console.log('Element at index 1:', secondNode ? secondNode.data : null);
+
+list.removeAt(2);
+console.log('Size after removal:', list.size());
+
+console.log('All elements:');
+list.print();
+
+console.log('Head:', list.head ? list.head.data : null);
+console.log('Tail:', list.tail ? list.tail.data : null);
+
 module.exports = LinkedList;

@@ -134,3 +134,5 @@ tree.postOrderTraverse(root, print);
 
 tree.remove(10);
 tree.inOrderTraverse(root, print);
+
+module.exports = BinaryTree;
