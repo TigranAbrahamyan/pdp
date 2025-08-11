@@ -38,3 +38,23 @@ class Stack2 {
     return this.list[this.list.length - 1];
   }
 }
+
+const stack1 = new Stack();
+
+stack1.push(10);
+stack1.push(20);
+stack1.push(30);
+
+console.log('Peek:', stack1.peek());
+console.log('Pop:', stack1.pop());
+console.log('Peek after pop:', stack1.peek());
+
+const stack2 = new Stack2();
+
+stack2.push('apple');
+stack2.push('banana');
+stack2.push('cherry');
+
+console.log('Peek:', stack2.peek());
+console.log('Pop:', stack2.pop());
+console.log('Peek after pop:', stack2.peek());

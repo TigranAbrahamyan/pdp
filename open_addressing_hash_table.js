@@ -14,7 +14,7 @@ class HashTable {
   }
 
   set(key, value) {
-    let index = this.#hash();
+    let index = this.#hash(key);
 
     while (this.table[index] && this.table[index][0] !== key) {
       index++;
@@ -24,7 +24,7 @@ class HashTable {
   }
 
   get(key) {
-    let index = this._hash(key);
+    let index = this.#hash(key);
 
     while (this.table[index]) {
       if (this.table[index][0] === key) {
@@ -52,3 +52,21 @@ class HashTable {
     return false;
   }
 }
+
+const hash = new HashTable();
+
+hash.set('name', 'Alice');
+hash.set('age', 30);
+hash.set('city', 'New-york');
+
+console.log('Name:', hash.get('name'));
+console.log('Age:', hash.get('age'));
+console.log('City:', hash.get('city'));
+
+hash.set('age', 31);
+console.log('Updated Age:', hash.get('age'));
+
+console.log('Delete city:', hash.delete('city'));
+console.log('City after deletion:', hash.get('city'));
+
+console.log('Delete unknown key:', hash.delete('nonexistent'));
